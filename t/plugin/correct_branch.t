@@ -23,31 +23,19 @@ validate_class $THING => (
 
 # XXX need real tests :)
 
-use Test::DZil;
-
 subtest 'simple repo, on wrong, divergent branch' => sub {
 
-    # make some basic commits, branch...
-    my ($repo_root) = make_test_repo(
-        'mkdir -p lib/DZT',
-        _ack('lib/DZT/Sample.pm' => 'package DZT::Sample; use Something; 1;'),
-        _ack(foo => 'bap'),
-        _ack(bap => 'bink'),
-        'git checkout -b other_branch',
-        _ack(foo  => 'bink'),
-        _ack(bink => 'bink'),
-    );
-
-    # ...then create a Builder and check for exception
-    my $tzil = Builder->from_config(
-        { dist_root => "$repo_root" },
-        {
-            add_files => {
-                'source/dist.ini' => simple_ini(
-                    qw(GatherDir Git::CheckFor::CorrectBranch FakeRelease),
-                ),
-            },
-        },
+    my ($tzil, $repo_root) = prep_for_testing(
+        repo_init => [
+            'mkdir -p lib/DZT',
+            _ack('lib/DZT/Sample.pm' => 'package DZT::Sample; use Something; 1;'),
+            _ack(foo => 'bap'),
+            _ack(bap => 'bink'),
+            'git checkout -b other_branch',
+            _ack(foo  => 'bink'),
+            _ack(bink => 'bink'),
+        ],
+        plugin_list => [ qw(GatherDir Git::CheckFor::CorrectBranch FakeRelease) ],
     );
 
     my $dies = exception { $tzil->release };
