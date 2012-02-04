@@ -43,12 +43,15 @@ sub prep_for_testing {
     # make some basic commits, branch...
     my ($repo_root) = make_test_repo(@{$opts{repo_init}});
 
+    my @dist_ini = @{$opts{plugin_list}};
+    unshift @dist_ini, $opts{core_args} if $opts{core_args};
+
     # ...then create a Builder and check for exception
     my $tzil = Builder->from_config(
         { dist_root => "$repo_root" },
         {
             add_files => {
-                'source/dist.ini' => simple_ini(@{$opts{plugin_list}}),
+                'source/dist.ini' => simple_ini(@dist_ini),
             },
         },
     );
