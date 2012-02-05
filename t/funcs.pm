@@ -26,12 +26,13 @@ sub make_test_repo {
 }
 
 sub _ack {
-    my ($fn, $text) = @_;
+    my ($fn, $text, $msg) = @_;
     $text ||= 'whee';
+    $msg  ||= 'ack';
 
     return (
         qq{echo "$text" >> $fn},
-        qq{git add $fn && git commit -m "ack"},
+        qq{git add $fn && git commit -m '$msg'},
     );
 }
 
