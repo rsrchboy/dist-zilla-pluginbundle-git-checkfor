@@ -21,9 +21,41 @@ validate_class $THING => (
     methods    => [ qw{ current_branch } ],
 );
 
-# XXX need real tests :)
+subtest 'simple repo, on wrong, divergent branch' => sub {
+    our_test(
+        'Git::CheckFor::CorrectBranch',
+        qr/Your current branch \(other_branch\) is not the release branch \(master\)/,
+    );
+};
 
 subtest 'simple repo, on wrong, divergent branch' => sub {
+    our_test(
+        [ 'Git::CheckFor::CorrectBranch' => { release_branch => 'barf' } ],
+        qr/Your current branch \(other_branch\) is not the release branch \(barf\)/,
+    );
+};
+
+subtest 'simple repo, on correct branch' => sub {
+    our_test(
+        [ 'Git::CheckFor::CorrectBranch' => { release_branch => 'other_branch' } ],
+        undef,
+        sub { ok !$_[0], 'passed!' },
+    );
+};
+
+# our_test() below is... erm, a little awkward.  But it does the job, and can
+# be refactored when a need/reason arises.
+
+done_testing; # <=======
+
+sub our_test {
+    my ($plugin_cfg, $test_regex, $test) = @_;
+
+    my $test_sub
+        = ref $test && ref $test eq 'CODE'
+        ? $test
+        : sub { like($_[0], $test_regex, 'Correctly barfed on incorrect branch') }
+        ;
 
     my ($tzil, $repo_root) = prep_for_testing(
         repo_init => [
@@ -35,19 +67,10 @@ subtest 'simple repo, on wrong, divergent branch' => sub {
             _ack(foo  => 'bink'),
             _ack(bink => 'bink'),
         ],
-        plugin_list => [ qw(GatherDir Git::CheckFor::CorrectBranch FakeRelease) ],
+        plugin_list => [ 'GatherDir', $plugin_cfg, 'FakeRelease' ],
     );
 
-    my $dies = exception { $tzil->release };
+    my $thrown = exception { $tzil->release };
+    diag_log($tzil, $test_sub->($thrown));
+}
 
-    # e.g.: [Git::CheckFor::CorrectBranch] Your current branch (other_branch) is not the release branch (master)
-    diag_log($tzil,
-        like(
-            $dies,
-            qr/Your current branch \(.+\) is not the release branch/,
-            'Correctly barfed on incorrect branch',
-        ),
-    );
-};
-
-done_testing;
