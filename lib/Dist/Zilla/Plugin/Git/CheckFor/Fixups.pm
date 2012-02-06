@@ -6,7 +6,8 @@ use Moose;
 use namespace::autoclean;
 use MooseX::AttributeShortcuts;
 
-use Dist::Zilla::Plugin::Git::NextVersion ();
+# we depend on functionality first present in 1.120370
+use Dist::Zilla::Plugin::Git::NextVersion 1.120370 ();
 use List::Util 'first';
 use Git::Wrapper;
 
