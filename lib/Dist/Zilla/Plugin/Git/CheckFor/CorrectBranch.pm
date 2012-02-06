@@ -47,13 +47,39 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
+=for Pod::Coverage current_branch before_release
+
 =head1 SYNOPSIS
 
+    ; in dist.ini
+    [Git::CheckFor::CorrectBranch]
+    ; release_branch defaults to 'master'
+    ;release_branch = master
+
+    # on branch topic/geewhiz...
+    $ dzil release # ABENDs!
+
+    # ...and on branch master
+    $ dzil release # succeeds
+
 =head1 DESCRIPTION
+
+This is a simple L<Dist::Zilla> plugin to check that you are on the correct
+branch before allowing a release...  Its reason for existance is to prevent
+accidental releases being cut from topic branches: which are in general not
+unrecoverable, but annoying, messy, and (sometimes) embarassing.
+
+=head1 OPTIONS
+
+=head2 release_branch
+
+This is the name of the branch it is legal to release from: it defaults to
+'master'.
 
 =head1 SEE ALSO
 
 L<Dist::Zilla>
+L<Dist::Zilla::Plugin::Git>
 
 =cut
 

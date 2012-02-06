@@ -83,13 +83,39 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
+=for Pod::Coverage before_release
+
 =head1 SYNOPSIS
 
+    ; in dist.ini -- note we depend on Git::NextVersion for versioning info
+    [Git::NextVersion]
+    [Git::CheckFor::Fixups]
+
 =head1 DESCRIPTION
+
+This is a simple L<Dist::Zilla> plugin to check that since the last release,
+you have no fixup or squash commits remaining in your history.  The presense
+of these commits is almost certainly an oversight, so if any are found the
+release is aborted.
+
+Note that we do not check for the presense of such commits in the history of
+older releases; having a fixup commit in the history is embarassing, but not
+so much so as rebasing to resolve a blemish in the deep, dark, sordid past of
+the project.
+
+=head1 WHAT'S A FIXUP OR SQUASH COMMIT?
+
+A squash or fixup commit is one with a commit message formatted in such a
+manner that C<git rebase --autosquash> will recognize it; namely:
+
+A fixup commit has a commit message beginning with 'fixup! '
+
+A squash commit has a commit message beginning with 'squash! '
 
 =head1 SEE ALSO
 
 L<Dist::Zilla>
+L<Dist::Zilla::Plugin::Git::NextVersion>
 
 =cut
 
