@@ -2,7 +2,7 @@ use strict;
 use warnings;
 
 use Test::More;
-use Test::Moose::More;
+use Test::Moose::More 0.008;
 
 use Dist::Zilla::Role::Git::Repo::More;
 
