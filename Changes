@@ -1,5 +1,11 @@
-Revision history for {{$dist->name}}
+Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
+
+0.002     2012-04-13 14:16:08 America/Los_Angeles
+- no functional changes!
+- bump Test::Moose::More prereq to 0.008, as we need a version of
+  has_attribute_ok that handles checking roles w/o barfing (as Test::Moose now
+  seems to)
 
 0.001     2012-02-06 13:11:50 America/Los_Angeles
