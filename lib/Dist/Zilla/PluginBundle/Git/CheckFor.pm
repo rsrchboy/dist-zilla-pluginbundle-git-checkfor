@@ -28,6 +28,8 @@ __END__
 
 =for Pod::Coverage configure
 
+=for :spelling autosquash
+
 =head1 SYNOPSIS
 
     ; in dist.ini

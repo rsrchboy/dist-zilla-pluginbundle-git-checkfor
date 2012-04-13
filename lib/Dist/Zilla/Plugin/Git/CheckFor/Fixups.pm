@@ -94,12 +94,12 @@ __END__
 =head1 DESCRIPTION
 
 This is a simple L<Dist::Zilla> plugin to check that since the last release,
-you have no fixup or squash commits remaining in your history.  The presense
+you have no fixup or squash commits remaining in your history.  The presence
 of these commits is almost certainly an oversight, so if any are found the
 release is aborted.
 
-Note that we do not check for the presense of such commits in the history of
-older releases; having a fixup commit in the history is embarassing, but not
+Note that we do not check for the presence of such commits in the history of
+older releases; having a fixup commit in the history is embarrassing, but not
 so much so as rebasing to resolve a blemish in the deep, dark, sordid past of
 the project.
 
