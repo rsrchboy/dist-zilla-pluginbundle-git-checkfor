@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
+- [Git::CheckFor::CorrectBranch] now permits releases from multiple brnaches
+  (Karen Etheridge)
 
 0.003     2012-05-02 11:11:39 America/Los_Angeles
 - handle version tags where '-TRIAL' is appeneded.  We'll need to revisit this
