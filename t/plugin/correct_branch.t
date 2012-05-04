@@ -30,14 +30,22 @@ subtest 'simple repo, on wrong, divergent branch' => sub {
 
 subtest 'simple repo, on wrong, divergent branch' => sub {
     our_test(
-        [ 'Git::CheckFor::CorrectBranch' => { release_branch => 'barf' } ],
+        [ 'Git::CheckFor::CorrectBranch' => { release_branch => ['barf'] } ],
         qr/Your current branch \(other_branch\) is not the release branch \(barf\)/,
     );
 };
 
 subtest 'simple repo, on correct branch' => sub {
     our_test(
-        [ 'Git::CheckFor::CorrectBranch' => { release_branch => 'other_branch' } ],
+        [ 'Git::CheckFor::CorrectBranch' => { release_branch => ['other_branch'] } ],
+        undef,
+        sub { ok !$_[0], 'passed!' },
+    );
+};
+
+subtest 'simple repo, on correct branch, multiple release branches' => sub {
+    our_test(
+        [ 'Git::CheckFor::CorrectBranch' => { release_branch => ['other_branch','another_branch'] } ],
         undef,
         sub { ok !$_[0], 'passed!' },
     );
