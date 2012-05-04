@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
+
+0.004     2012-05-04 14:53:44 America/Los_Angeles
 - [Git::CheckFor::CorrectBranch] now permits releases from multiple brnaches
   (Karen Etheridge)
 
