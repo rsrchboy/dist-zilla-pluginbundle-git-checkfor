@@ -54,7 +54,7 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
-=for Pod::Coverage current_branch before_release
+=for Pod::Coverage current_branch before_release mvp_multivalue_args
 
 =head1 SYNOPSIS
 
