@@ -1,6 +1,6 @@
 package Dist::Zilla::Role::Git::Repo::More;
 
-# ABSTRACT: Check your repo for fixup! and squash! before release
+# ABSTRACT: A little more than Dist::Zilla::Role::Git::Repo
 
 use Moose::Role;
 use namespace::autoclean;
@@ -22,11 +22,17 @@ __END__
 
 =head1 SYNOPSIS
 
+    # ta-da!
+    with 'Dist::Zilla::Role::Git::Repo::More';
+
 =head1 DESCRIPTION
+
+This is a role that extends L<Dist::Zilla::Role::Git::Repo> to provide an
+additional private attribute.  There's probably nothing here you'd be terribly
+interested in.
 
 =head1 SEE ALSO
 
-L<Dist::Zilla>
+L<Dist::Zilla::Role::Git::Repo>
 
 =cut
-
