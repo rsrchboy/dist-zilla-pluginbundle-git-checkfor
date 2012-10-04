@@ -2,6 +2,13 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
 
+0.005     2012-10-03 22:10:53 PST8PDT
+	* make our test suite usable on !unix platforms (github #4, #5)
+	* Fix breakage introduced by the git NextVersion plugin in  1.122770 by
+	  pulling over the removed code and integrating it here.  This is expected
+	  to be a temporary measure as we figure out a more permanent (and
+	  hopefully cooperative) solution.
+
 0.004     2012-05-04 14:53:44 America/Los_Angeles
 	* [Git::CheckFor::CorrectBranch] now permits releases from multiple brnaches
 	  (Karen Etheridge)
