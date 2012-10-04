@@ -3,18 +3,18 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 {{$NEXT}}
 
 0.004     2012-05-04 14:53:44 America/Los_Angeles
-- [Git::CheckFor::CorrectBranch] now permits releases from multiple brnaches
-  (Karen Etheridge)
+	* [Git::CheckFor::CorrectBranch] now permits releases from multiple brnaches
+	  (Karen Etheridge)
 
 0.003     2012-05-02 11:11:39 America/Los_Angeles
-- handle version tags where '-TRIAL' is appeneded.  We'll need to revisit this
-  later to make things Work Better, but for now it works and with a minimum of
-  fuss.
+	* handle version tags where '-TRIAL' is appeneded.  We'll need to revisit this
+	  later to make things Work Better, but for now it works and with a minimum of
+	  fuss.
 
 0.002     2012-04-13 14:16:08 America/Los_Angeles
-- no functional changes!
-- bump Test::Moose::More prereq to 0.008, as we need a version of
-  has_attribute_ok that handles checking roles w/o barfing (as Test::Moose now
-  seems to)
+	* no functional changes!
+	* bump Test::Moose::More prereq to 0.008, as we need a version of
+	  has_attribute_ok that handles checking roles w/o barfing (as Test::Moose now
+	  seems to)
 
 0.001     2012-02-06 13:11:50 America/Los_Angeles
