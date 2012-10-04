@@ -21,8 +21,14 @@ sub make_test_repo {
     unshift @commands, 'git init'
         unless $commands[0] =~ /git init/;
 
+    # If we're not a code ref, make us one.
+    @commands =
+        map { my $x = $_; ref $x ? $x : sub { system "($x)" } }
+        @commands
+        ;
+
     # this is just to keep things quiet...
-    capture_merged { system "($_)" } for @commands;
+    capture_merged { $_->() } for @commands;
 
     return $repo_root;
 }

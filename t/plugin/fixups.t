@@ -53,7 +53,7 @@ sub our_tzil {
     #my ($tzil, $repo_root) = prep_for_testing(
     return prep_for_testing(
         repo_init => [
-            'mkdir -p lib/DZT',
+            sub { dir(qw{ lib DZT })->mkpath },
             _ack('lib/DZT/Sample.pm' => 'package DZT::Sample; use Something; 1;'),
             @additional
         ],
