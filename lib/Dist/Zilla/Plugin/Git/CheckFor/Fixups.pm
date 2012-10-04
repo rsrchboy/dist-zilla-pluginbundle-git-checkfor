@@ -21,13 +21,13 @@ use Try::Tiny;
 with
     'Dist::Zilla::Role::BeforeRelease',
     'Dist::Zilla::Role::Git::Repo::More',
+        #-excludes => [ qw { _build_version_regexp _build_first_version } ],
     ;
 
 has _next_version_plugin => (
-
     is      => 'lazy',
     isa     => 'Dist::Zilla::Plugin::Git::NextVersion',
-    handles => [ 'last_version' ],
+    handles => [ qw{ version_regexp first_version } ],
 );
 
 sub _build__next_version_plugin {

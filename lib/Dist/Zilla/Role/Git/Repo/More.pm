@@ -18,8 +18,8 @@ sub _build__repo { Git::Wrapper->new(shift->repo_root) }
 
 # -- attributes
 
-has version_regexp => ( is => 'rwp', isa=>'Str', default => '^v(.+)$' );
-has first_version  => ( is => 'rwp', isa=>'Str', default => '0.001' );
+#has version_regexp => (is => 'rwp', isa=>'Str', lazy => 1, predicate => 1, builder => sub { '^v(.+)$' });
+#has first_version  => (is => 'rwp', isa=>'Str', lazy => 1, predicate => 1, default => sub { '0.001' });
 
 has _previous_versions => (
 
