@@ -6,6 +6,7 @@ use IPC::System::Simple (); # for autodie && prereqs
 
 use File::chdir;
 use Path::Class;
+use Capture::Tiny 'capture_merged';
 
 use Test::DZil;
 
@@ -20,7 +21,8 @@ sub make_test_repo {
     unshift @commands, 'git init'
         unless $commands[0] =~ /git init/;
 
-    system "($_) 2> /dev/null > /dev/null" for @commands;
+    # this is just to keep things quiet...
+    capture_merged { system "($_)" } for @commands;
 
     return $repo_root;
 }
