@@ -13,6 +13,7 @@ sub configure {
     $self->add_plugins(
         [ 'Git::CheckFor::CorrectBranch' => $self->config_slice('release_branch') ],
         'Git::CheckFor::Fixups',
+        'Git::CheckFor::MergeConflicts',
     );
 
     return;
@@ -46,6 +47,8 @@ autosquash commits (C<fixup!> or C<squash!>).
 L<Dist::Zilla::Plugin::Git::CheckFor::Fixups>
 
 L<Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch>
+
+L<Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts>
 
 L<Dist::Zilla::PluginBundle::Git>
 
