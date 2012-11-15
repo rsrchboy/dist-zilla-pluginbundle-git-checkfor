@@ -2,6 +2,10 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
 
+0.006     2012-11-14 22:14:15 PST8PDT
+	* Add plugin to check for common merge mishaps [Mike Doherty]
+	* Add explicit dependency on the git executable
+
 0.005     2012-10-03 22:10:53 PST8PDT
 	* make our test suite usable on !unix platforms (github #4, #5)
 	* Fix breakage introduced by the git NextVersion plugin in  1.122770 by
