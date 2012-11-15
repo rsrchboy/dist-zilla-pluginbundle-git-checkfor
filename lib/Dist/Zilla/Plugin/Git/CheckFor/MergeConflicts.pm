@@ -16,7 +16,7 @@ with
     ;
 
 has merge_conflict_patterns => (
-    is => 'ro', 
+    is => 'ro',
     isa => 'ArrayRef[RegexpRef]',
     lazy => 1,
     default => sub {
