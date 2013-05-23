@@ -37,10 +37,11 @@ sub _ack {
     my ($fn, $text, $msg) = @_;
     $text ||= 'whee';
     $msg  ||= 'ack';
+    my $q = $^O eq 'MSWin32' ? '"' : "'";
 
     return (
         qq{echo "$text" >> $fn},
-        qq{git add $fn && git commit -m '$msg'},
+        qq{git add $fn && git commit -m $q$msg$q},
     );
 }
 
