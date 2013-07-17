@@ -5,8 +5,6 @@ package Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch;
 use Moose;
 use namespace::autoclean;
 
-use Git::Wrapper;
-
 with
     'Dist::Zilla::Role::BeforeRelease',
     'Dist::Zilla::Role::Git::Repo::More',
