@@ -22,8 +22,10 @@ before_install:
 install:
    # not so much install our package as all its prereqs
    # bootstrapping!
-   - dzil authordeps --missing        | PERL5LIB="$PERL5LIB:lib" cpanm -q || { cat ~/.cpanm/build.log ; false ; }
-   - dzil listdeps --author --missing | PERL5LIB="$PERL5LIB:lib" cpanm -q || { cat ~/.cpanm/build.log ; false ; }
+   - cpanm -q --installdeps Dist::Zilla::PluginBundle::Git::CheckFor || { cat ~/.cpanm/build.log ; false ; }
+   - cpanm --notest --verbose --no-interactive Dist::Zilla::PluginBundle::Git::CheckFor
+   - dzil authordeps --missing        | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
+   - dzil listdeps --author --missing | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
 
 script:
    - export DZSIGN=archive
