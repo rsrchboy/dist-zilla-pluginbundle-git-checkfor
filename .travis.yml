@@ -20,10 +20,10 @@ before_install:
    - cpanp x
 
 install:
-   # not so much install our package as all its prereqs
    # bootstrapping!
    - cpanm -q --installdeps Dist::Zilla::PluginBundle::Git::CheckFor || { cat ~/.cpanm/build.log ; false ; }
    - cpanm --notest --verbose --no-interactive Dist::Zilla::PluginBundle::Git::CheckFor
+   # not so much install our package as all its prereqs
    - dzil authordeps --missing        | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
    - dzil listdeps --author --missing | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
 
