@@ -8,8 +8,8 @@ branches:
 
 before_install:
    # git bits sometimes needed...
-   - git config user.name 'Travis-CI'
-   - git config user.email 'travis@nowhere.dne'
+   - git config --global user.name 'Travis-CI'
+   - git config --global user.email 'travis@nowhere.dne'
 
    # Moose installs in parallel quite nicely.
    - HARNESS_OPTIONS=j8:c cpanm -q Moose       || { cat ~/.cpanm/build.log ; false ; }
