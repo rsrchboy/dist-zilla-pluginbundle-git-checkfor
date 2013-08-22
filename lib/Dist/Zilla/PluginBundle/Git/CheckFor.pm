@@ -44,12 +44,12 @@ autosquash commits (C<fixup!> or C<squash!>).
 
 =head1 SEE ALSO
 
-L<Dist::Zilla::Plugin::Git::CheckFor::Fixups>
+Dist::Zilla::Plugin::Git::CheckFor::Fixups
 
-L<Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch>
+Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch
 
-L<Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts>
+Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts
 
-L<Dist::Zilla::PluginBundle::Git>
+Dist::Zilla::PluginBundle::Git
 
 =cut

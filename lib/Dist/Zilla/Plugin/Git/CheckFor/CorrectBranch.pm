@@ -91,8 +91,9 @@ and 'stable'.
 
 =head1 SEE ALSO
 
-L<Dist::Zilla>
-L<Dist::Zilla::Plugin::Git>
+Dist::Zilla
+
+Dist::Zilla::Plugin::Git
 
 =cut
 
