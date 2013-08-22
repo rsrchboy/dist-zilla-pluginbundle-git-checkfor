@@ -50,6 +50,7 @@ before_install:
    - cpanp x
 
 install:
+   - echo $PERL_CPANM_OPT
    # not so much install our package as all its prereqs
    - dzil authordeps --missing        | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
    - dzil listdeps --author --missing | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
