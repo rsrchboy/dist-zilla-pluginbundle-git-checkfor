@@ -23,8 +23,8 @@ env:
 
 branches:
     except:
-        # these have their own configs provided
-        - "release/cpan"
+        # these need a different configuration
+        - /release\/.*$/
         - /^build\/.*$/
 
 before_install:
