@@ -1,7 +1,7 @@
 use strict;
 use warnings;
 
-use autodie 'system';
+use autodie ':all';
 use IPC::System::Simple (); # for autodie && prereqs
 
 use File::chdir;
@@ -28,7 +28,8 @@ sub make_test_repo {
         ;
 
     # this is just to keep things quiet...
-    capture_merged { $_->() } for @commands;
+    #capture_merged { $_->() } for @commands;
+    $_->() for @commands;
 
     return $repo_root;
 }
@@ -40,7 +41,8 @@ sub _ack {
 
     return (
         qq{echo "$text" >> $fn},
-        qq{git add $fn && git commit -m '$msg'},
+        qq{git add $fn},
+        qq{git commit -m '$msg'},
     );
 }
 
