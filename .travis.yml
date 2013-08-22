@@ -14,9 +14,12 @@ matrix:
 env:
    global:
       # this should speed things up by bypassing external queries
-      - PERL_CPANM_OPT="--mirror-only -q $PERL_CPANM_OPT"
+      #- PERL_CPANM_OPT="--mirror-only -q $PERL_CPANM_OPT"
+      - PERL_CPANM_OPT="-q $PERL_CPANM_OPT"
       # don't try to gpg sign with keys we don't have
       - DZSIGN=archive
+      # try to run tests parallel
+      #- HARNESS_OPTIONS="j8:c"
 
 branches:
     except:
@@ -50,5 +53,5 @@ install:
    - dzil listdeps --author --missing | cpanm || { cat ~/.cpanm/build.log ; false ; }
 
 script:
-   - unset HARNESS_SUBCLASS
+   - unset HARNESS_SUBCLASS HARNESS_OPTIONS
    - dzil test --release --author
