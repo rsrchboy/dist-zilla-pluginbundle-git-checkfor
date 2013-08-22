@@ -22,7 +22,10 @@ before_install:
    - git config --global user.name 'Travis-CI'
    - git config --global user.email 'travis@nowhere.dne'
 
-   # gotta love failing pod tests blowing everything up...
+   # this should speed things up, and bypass external queries
+   - export PERL_CPANM_OPT="--mirror-only -q $PERL_CPANM_OPT"
+
+   # this prevents failing pod tests blowing everything up...
    - cpanm -q TAP::Harness::Restricted || { cat ~/.cpanm/build.log ; false ; }
    - export HARNESS_SUBCLASS=TAP::Harness::Restricted
 
