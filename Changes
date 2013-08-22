@@ -1,6 +1,6 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
-{{$NEXT}}
+0.007     2013-08-22 12:36:57 PDT-0700
 
 0.006     2012-11-14 22:14:15 PST8PDT
 	* Add plugin to check for common merge mishaps [Mike Doherty]
