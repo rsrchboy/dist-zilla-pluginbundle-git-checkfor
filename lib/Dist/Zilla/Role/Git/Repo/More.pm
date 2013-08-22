@@ -90,6 +90,6 @@ interested in.
 
 =head1 SEE ALSO
 
-L<Dist::Zilla::Role::Git::Repo>
+Dist::Zilla::Role::Git::Repo
 
 =cut

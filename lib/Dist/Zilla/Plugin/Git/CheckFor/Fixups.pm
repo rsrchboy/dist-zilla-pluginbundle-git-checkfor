@@ -132,8 +132,9 @@ A squash commit has a commit message beginning with 'squash! '
 
 =head1 SEE ALSO
 
-L<Dist::Zilla>
-L<Dist::Zilla::Plugin::Git::NextVersion>
+Dist::Zilla
+
+Dist::Zilla::Plugin::Git::NextVersion
 
 =cut
 
