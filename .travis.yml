@@ -35,7 +35,7 @@ before_install:
    # this should speed things up, and bypass external queries
    #- export PERL_CPANM_OPT="--mirror-only -q $PERL_CPANM_OPT"
    - echo $PERL_CPANM_OPT
-   - export PERL_CPANM_OPT="-q $PERL_CPANM_OPT"
+   #- export PERL_CPANM_OPT="-q $PERL_CPANM_OPT"
 
    # this prevents failing pod tests blowing everything up...
    - cpanm -q TAP::Harness::Restricted || { cat ~/.cpanm/build.log ; false ; }
