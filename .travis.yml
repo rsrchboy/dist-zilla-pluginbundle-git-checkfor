@@ -20,15 +20,11 @@ before_install:
    - cpanp x
 
 install:
-   # bootstrapping!
-   - cpanm -q --mirror-only --installdeps Dist::Zilla::PluginBundle::Git::CheckFor || { cat ~/.cpanm/build.log ; false ; }
-   - cpanm --notest --verbose --no-interactive Dist::Zilla::PluginBundle::Git::CheckFor
-   #- mkdir -p inc/Dist/Zilla/PluginBundle/Git/CheckFor.pm
-   - ln -s lib inc
    # not so much install our package as all its prereqs
-   - dzil authordeps --missing        | cpanm -q --mirror-only || { cat ~/.cpanm/build.log ; false ; }
-   - dzil listdeps --author --missing | cpanm -q --mirror-only || { cat ~/.cpanm/build.log ; false ; }
+   - dzil authordeps --missing        | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
+   - dzil listdeps --author --missing | cpanm -q || { cat ~/.cpanm/build.log ; false ; }
 
 script:
    - export DZSIGN=archive
+   - unset HARNESS_SUBCLASS
    - dzil test --release --author
