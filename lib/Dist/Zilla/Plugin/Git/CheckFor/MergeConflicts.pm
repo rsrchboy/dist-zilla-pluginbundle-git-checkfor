@@ -94,7 +94,8 @@ contain no merge conflict markers.
 
 =head1 SEE ALSO
 
-L<Dist::Zilla>
-L<Dist::Zilla::Plugin::Git::CheckFor>
+Dist::Zilla
+
+Dist::Zilla::Plugin::Git::CheckFor
 
 =cut
