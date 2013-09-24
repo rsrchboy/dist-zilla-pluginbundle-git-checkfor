@@ -1,6 +1,7 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
+        * fix issue with parsing utf8-encoded files
 
 0.006     2012-11-14 22:14:15 PST8PDT
 	* Add plugin to check for common merge mishaps [Mike Doherty]
