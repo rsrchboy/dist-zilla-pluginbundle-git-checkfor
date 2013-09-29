@@ -7,6 +7,7 @@ use IPC::System::Simple (); # for autodie && prereqs
 use File::chdir;
 use Path::Class;
 use Capture::Tiny 'capture_merged';
+use Try::Tiny;
 
 use Test::DZil;
 
@@ -28,7 +29,14 @@ sub make_test_repo {
         ;
 
     # this is just to keep things quiet...
-    capture_merged { $_->() } for @commands;
+    my $fail = q{};
+    my $merged = capture_merged {
+        try { $_->() } catch { $fail .= $_ }
+            for @commands;
+    };
+
+    die "Building git repo FAILED: $fail\n\nLOG:\n$merged"
+        if $fail ne q{};
 
     return $repo_root;
 }
