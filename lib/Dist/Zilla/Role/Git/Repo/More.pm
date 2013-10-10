@@ -6,14 +6,15 @@ use Moose::Role;
 use namespace::autoclean;
 use MooseX::AttributeShortcuts;
 
-use Git::Wrapper;
-
 with
     'Dist::Zilla::Role::Git::Repo',
     ;
 
 has _repo => (is => 'lazy', isa => 'Git::Wrapper');
-sub _build__repo { Git::Wrapper->new(shift->repo_root) }
+sub _build__repo {
+  require Git::Wrapper;
+  Git::Wrapper->new(shift->repo_root)
+}
 
 
 # -- attributes
@@ -40,6 +41,7 @@ sub _build__previous_versions {
 
   local $/ = "\n"; # Force record separator to be single newline
 
+  require Git::Wrapper;
   my $git  = Git::Wrapper->new( $self->repo_root );
   my $regexp = $self->version_regexp;
 

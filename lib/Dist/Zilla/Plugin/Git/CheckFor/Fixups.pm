@@ -12,7 +12,6 @@ use IPC::System::Simple ();
 # we depend on functionality first present in 1.120370
 use Dist::Zilla::Plugin::Git::NextVersion 1.120370 ();
 use List::Util 'first';
-use Git::Wrapper;
 use Try::Tiny;
 
 # debugging...
