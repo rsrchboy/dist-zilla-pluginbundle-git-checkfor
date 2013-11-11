@@ -48,14 +48,16 @@ sub before_release {
     FILE:
     foreach my $file ( $self->zilla->files->flatten ) {
         next FILE
+            if $file->can('encoding') and $file->encoding eq 'bytes';
+
+        next FILE
             if $self->has_ignore
             and any { $file->name eq $_ } @{ $self->ignore };
 
         my $text = $file->content;
         foreach my $re ( @{ $self->merge_conflict_patterns } ) {
-            open my $from_mem_fh, '<', \$text;
-            while (<$from_mem_fh>) {
-                if ( m/($re)/ ) {
+            foreach my $line (split $/, $text)
+                if ( $line =~ m/($re)/ ) {
                     push @{ $error_files{ $file->name } }, "matched $re at line $.";
                 }
             }
