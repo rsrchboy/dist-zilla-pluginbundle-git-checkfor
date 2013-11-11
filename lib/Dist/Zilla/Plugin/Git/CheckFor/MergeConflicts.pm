@@ -56,7 +56,7 @@ sub before_release {
 
         my $text = $file->content;
         foreach my $re ( @{ $self->merge_conflict_patterns } ) {
-            foreach my $line (split $/, $text)
+            foreach my $line (split $/, $text) {
                 if ( $line =~ m/($re)/ ) {
                     push @{ $error_files{ $file->name } }, "matched $re at line $.";
                 }
