@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Git::CheckFor - All Git::CheckFor plugins at once
 
 # VERSION
 
-This document describes version 0.007 of Dist::Zilla::PluginBundle::Git::CheckFor - released September 29, 2013 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
+This document describes version 0.008 of Dist::Zilla::PluginBundle::Git::CheckFor - released November 10, 2013 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 # SYNOPSIS
 
@@ -21,10 +21,10 @@ autosquash commits (`fixup!` or `squash!`).
 
 Please see those modules/websites for more information related to this module.
 
-- [Dist::Zilla::Plugin::Git::CheckFor::Fixups](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::Git::CheckFor::Fixups)
-- [Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch)
-- [Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts](http://search.cpan.org/perldoc?Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts)
-- [Dist::Zilla::PluginBundle::Git](http://search.cpan.org/perldoc?Dist::Zilla::PluginBundle::Git)
+- [Dist::Zilla::Plugin::Git::CheckFor::Fixups](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::CheckFor::Fixups)
+- [Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch)
+- [Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts)
+- [Dist::Zilla::PluginBundle::Git](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Git)
 
 # SOURCE
 
@@ -48,6 +48,7 @@ Chris Weyl <cweyl@alumni.drew.edu>
 
 - Karen Etheridge <ether@cpan.org>
 - Mike Doherty <doherty@cs.dal.ca>
+- Olivier Mengué <dolmen@cpan.org>
 
 # COPYRIGHT AND LICENSE
 

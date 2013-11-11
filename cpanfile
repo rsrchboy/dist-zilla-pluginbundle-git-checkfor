@@ -13,7 +13,7 @@ requires "MooseX::AttributeShortcuts" => "0";
 requires "Try::Tiny" => "0";
 requires "autodie" => "0";
 requires "namespace::autoclean" => "0";
-requires "perl" => "5.008";
+requires "perl" => "5.006";
 requires "strict" => "0";
 requires "warnings" => "0";
 
@@ -25,7 +25,7 @@ on 'test' => sub {
   requires "IO::Handle" => "0";
   requires "IPC::Open3" => "0";
   requires "Path::Class" => "0";
-  requires "Test::CheckDeps" => "0.007";
+  requires "Test::CheckDeps" => "0.010";
   requires "Test::DZil" => "0";
   requires "Test::Fatal" => "0";
   requires "Test::Moose::More" => "0.008";
