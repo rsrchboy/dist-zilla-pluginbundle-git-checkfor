@@ -42,7 +42,7 @@ sub before_release {
     $self->log_fatal($fatal_msg) if $fatal_msg;
 
     # if we're here, we're good
-    $self->log("Current branch ($cbranch) and release branch match (", join(', ', @rbranch), ")");
+    $self->log("Current branch ($cbranch) and release branch match (" . join(', ', @rbranch) .')');
     return;
 }
 
