@@ -2,8 +2,11 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
 
+0.009     2014-01-28 15:50:28 PST-0800
+    * merge github #11, github #15
+
 0.008     2013-11-10 22:55:17 PST-0800
-        * fix issue with parsing utf8-encoded files
+    * fix issue with parsing utf8-encoded files
 
 0.007     2013-09-29 17:04:08 PDT-0700
 	* Fix issues with travis and our test suite (aka set user.name, user.email

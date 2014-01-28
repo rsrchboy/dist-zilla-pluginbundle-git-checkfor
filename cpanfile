@@ -32,6 +32,7 @@ on 'test' => sub {
   requires "Test::More" => "0.94";
   requires "Test::Most" => "0";
   requires "Test::TempDir" => "0";
+  requires "perl" => "5.006";
 };
 
 on 'configure' => sub {

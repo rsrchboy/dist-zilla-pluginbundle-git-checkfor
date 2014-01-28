@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Git::CheckFor - All Git::CheckFor plugins at once
 
 # VERSION
 
-This document describes version 0.008 of Dist::Zilla::PluginBundle::Git::CheckFor - released November 10, 2013 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
+This document describes version 0.009 of Dist::Zilla::PluginBundle::Git::CheckFor - released January 28, 2014 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 # SYNOPSIS
 
@@ -46,9 +46,10 @@ Chris Weyl <cweyl@alumni.drew.edu>
 
 # CONTRIBUTORS
 
+- Christian Walde <walde.christian@googlemail.com>
 - Karen Etheridge <ether@cpan.org>
 - Mike Doherty <doherty@cs.dal.ca>
-- Olivier Mengué <dolmen@cpan.org>
+- Olivier MenguÃ© <dolmen@cpan.org>
 
 # COPYRIGHT AND LICENSE
 
