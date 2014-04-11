@@ -1,7 +1,5 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
-{{$NEXT}}
-
 0.010     2014-04-11 11:48:23 PDT-0700
     * use CheckForBin, not RequiresExternal in our dzil config; this should
 	  stop false fails from being reported (and be nicer in general) when git
