@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Git::CheckFor - All Git::CheckFor plugins at once
 
 # VERSION
 
-This document describes version 0.010 of Dist::Zilla::PluginBundle::Git::CheckFor - released April 11, 2014 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
+This document describes version 0.011 of Dist::Zilla::PluginBundle::Git::CheckFor - released April 11, 2014 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 # SYNOPSIS
 
