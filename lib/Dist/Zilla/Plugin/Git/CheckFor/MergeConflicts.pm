@@ -1,4 +1,17 @@
+#
+# This file is part of Dist-Zilla-PluginBundle-Git-CheckFor
+#
+# This software is Copyright (c) 2012 by Chris Weyl.
+#
+# This is free software, licensed under:
+#
+#   The GNU Lesser General Public License, Version 2.1, February 1999
+#
 package Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts;
+BEGIN {
+  $Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts::AUTHORITY = 'cpan:RSRCHBOY';
+}
+$Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts::VERSION = '0.011';
 use strict;
 use warnings;
 
@@ -82,7 +95,21 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
-=for Pod::Coverage before_release mvp_multivalue_args
+=pod
+
+=encoding UTF-8
+
+=for :stopwords Chris Weyl Christian Walde <walde.christian@googlemail.com> Karen Etheridge
+<ether@cpan.org> Mike Doherty <doherty@cs.dal.ca> Olivier Mengué
+<dolmen@cpan.org>
+
+=head1 NAME
+
+Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts - Check your repo for merge-conflicted files
+
+=head1 VERSION
+
+This document describes version 0.011 of Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts - released April 11, 2014 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 =head1 SYNOPSIS
 
@@ -94,9 +121,52 @@ __END__
 This is a simple L<Dist::Zilla> plugin to check that the gathered files
 contain no merge conflict markers.
 
+=for Pod::Coverage before_release mvp_multivalue_args
+
 =head1 SEE ALSO
 
+Please see those modules/websites for more information related to this module.
+
+=over 4
+
+=item *
+
+L<Dist::Zilla::PluginBundle::Git::CheckFor|Dist::Zilla::PluginBundle::Git::CheckFor>
+
+=item *
+
 L<Dist::Zilla>
+
+=item *
+
 L<Dist::Zilla::Plugin::Git::CheckFor>
+
+=back
+
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor>
+and may be cloned from L<git://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git>
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor/issues
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Chris Weyl.
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
 
 =cut

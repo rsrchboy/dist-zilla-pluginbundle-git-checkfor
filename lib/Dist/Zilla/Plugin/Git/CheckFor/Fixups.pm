@@ -1,5 +1,17 @@
+#
+# This file is part of Dist-Zilla-PluginBundle-Git-CheckFor
+#
+# This software is Copyright (c) 2012 by Chris Weyl.
+#
+# This is free software, licensed under:
+#
+#   The GNU Lesser General Public License, Version 2.1, February 1999
+#
 package Dist::Zilla::Plugin::Git::CheckFor::Fixups;
-
+BEGIN {
+  $Dist::Zilla::Plugin::Git::CheckFor::Fixups::AUTHORITY = 'cpan:RSRCHBOY';
+}
+$Dist::Zilla::Plugin::Git::CheckFor::Fixups::VERSION = '0.011';
 # ABSTRACT: Check your repo for fixup! and squash! before release
 
 use Moose;
@@ -100,7 +112,21 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
-=for Pod::Coverage before_release
+=pod
+
+=encoding UTF-8
+
+=for :stopwords Chris Weyl Christian Walde Karen Etheridge Mike Doherty Olivier Mengué
+<walde.christian@googlemail.com> <ether@cpan.org> <doherty@cs.dal.ca>
+<dolmen@cpan.org>
+
+=head1 NAME
+
+Dist::Zilla::Plugin::Git::CheckFor::Fixups - Check your repo for fixup! and squash! before release
+
+=head1 VERSION
+
+This document describes version 0.011 of Dist::Zilla::Plugin::Git::CheckFor::Fixups - released April 11, 2014 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 =head1 SYNOPSIS
 
@@ -120,6 +146,8 @@ older releases; having a fixup commit in the history is embarrassing, but not
 so much so as rebasing to resolve a blemish in the deep, dark, sordid past of
 the project.
 
+=for Pod::Coverage before_release
+
 =head1 WHAT'S A FIXUP OR SQUASH COMMIT?
 
 A squash or fixup commit is one with a commit message formatted in such a
@@ -131,8 +159,48 @@ A squash commit has a commit message beginning with 'squash! '
 
 =head1 SEE ALSO
 
+Please see those modules/websites for more information related to this module.
+
+=over 4
+
+=item *
+
+L<Dist::Zilla::PluginBundle::Git::CheckFor|Dist::Zilla::PluginBundle::Git::CheckFor>
+
+=item *
+
 L<Dist::Zilla>
+
+=item *
+
 L<Dist::Zilla::Plugin::Git::NextVersion>
 
-=cut
+=back
 
+=head1 SOURCE
+
+The development version is on github at L<http://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor>
+and may be cloned from L<git://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git>
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor/issues
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2012 by Chris Weyl.
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
+
+=cut
