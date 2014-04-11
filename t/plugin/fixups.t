@@ -74,7 +74,7 @@ sub our_test {
     my ($tzil, $repo_root) = our_tzil(
         _pm,
         (ref $cmds? (@$cmds) : $cmds),
-        _ack('lib/DZT/Sample.pm' => undef, "a longer message\n\nLorem ipsum...\nfoo!\n"),
+        _ack('lib/DZT/Sample.pm' => undef, "a longer message... Lorem ipsum..."),
         _pm,
         _pm
     );
