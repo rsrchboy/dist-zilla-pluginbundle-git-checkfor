@@ -19,7 +19,6 @@ requires "warnings" => "0";
 
 on 'test' => sub {
   requires "Capture::Tiny" => "0";
-  requires "Env::Path" => "0";
   requires "File::Spec" => "0";
   requires "File::chdir" => "0";
   requires "IO::Handle" => "0";
@@ -30,12 +29,12 @@ on 'test' => sub {
   requires "Test::Fatal" => "0";
   requires "Test::Moose::More" => "0.008";
   requires "Test::More" => "0.94";
-  requires "Test::Most" => "0";
   requires "Test::TempDir" => "0";
   requires "perl" => "5.006";
 };
 
 on 'configure' => sub {
+  requires "Devel::CheckBin" => "0";
   requires "ExtUtils::MakeMaker" => "6.30";
 };
 

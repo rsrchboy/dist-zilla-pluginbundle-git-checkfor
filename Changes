@@ -2,6 +2,11 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
 
+0.010     2014-04-11 11:48:23 PDT-0700
+    * use CheckForBin, not RequiresExternal in our dzil config; this should
+	  stop false fails from being reported (and be nicer in general) when git
+	  is not installed on some system
+
 0.009     2014-01-28 15:50:28 PST-0800
     * merge github #11, github #15
 
