@@ -12,9 +12,9 @@ matrix:
       - perl: "5.8"
 
 before_install:
-    # gotta love failing pod tests blowing everything up...
-    - cpanm -q TAP::Harness::Restricted || { cat ~/.cpanm/build.log ; false ; }
-    - export HARNESS_SUBCLASS=TAP::Harness::Restricted
+   # gotta love failing pod tests blowing everything up...
+   - cpanm -q TAP::Harness::Restricted || { cat ~/.cpanm/build.log ; false ; }
+   - export HARNESS_SUBCLASS=TAP::Harness::Restricted
 
    # avoid dzil iff our perl < v5.10
    - perl -e '$^V lt v5.10' && ( cpanm --installdeps . ; exit 0 ; )
