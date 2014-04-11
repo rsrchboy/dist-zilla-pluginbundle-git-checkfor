@@ -11,6 +11,9 @@ use Try::Tiny;
 
 use Test::DZil;
 
+$ENV{GIT_AUTHOR_EMAIL}    ||= 'Test Ing <test@test.ing>';
+$ENV{GIT_COMMITTER_EMAIL} ||= 'Test Ing <test@test.ing>';
+
 sub make_test_repo {
     my @commands = @_;
 
