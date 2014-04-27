@@ -19,8 +19,9 @@ use Try::Tiny;
 
 with
     'Dist::Zilla::Role::BeforeRelease',
-    'Dist::Zilla::Role::Git::Repo::More',
-        #-excludes => [ qw { _build_version_regexp _build_first_version } ],
+    'Dist::Zilla::Role::GitStore::ConfigConsumer',
+    # XXX until we get Git::NextVersion providing it natively
+    'Dist::Zilla::Role::GitStore::ConfigProvider',
     ;
 
 has _next_version_plugin => (
@@ -36,6 +37,27 @@ sub _build__next_version_plugin {
         first { $_->isa('Dist::Zilla::Plugin::Git::NextVersion') }
         @{ $self->zilla->plugins_with(-VersionProvider) }
         ;
+}
+
+sub gitstore_config_provided {
+    my $self = shift @_;
+
+    # use stash-supplied values if we don't have the plugin around.
+    return {}
+        unless $self->_next_version_plugin;
+
+    # FIXME version.regexp, version.first?
+    return {
+        version_regexp => $self->_next_version_plugin->version_regexp,
+        first_version => $self->_next_version_plugin->first_version,
+    };
+}
+
+sub gitstore_config_required {
+    my $self = shift @_;
+
+    # FIXME flatten? version.regexp, version.first?
+    return [ qw{ version_regexp first_version } ];
 }
 
 sub before_release {
