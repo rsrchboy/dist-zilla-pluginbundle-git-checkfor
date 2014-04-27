@@ -18,7 +18,7 @@ use Dist::Zilla::Plugin::Git::CheckFor::Fixups;
 
 validate_class 'Dist::Zilla::Plugin::Git::CheckFor::Fixups' => (
     does => [
-        'Dist::Zilla::Role::Git::Repo::More',
+        'Dist::Zilla::Role::GitStash::ConfigConsumer',
         'Dist::Zilla::Role::BeforeRelease',
     ],
 );
@@ -58,7 +58,7 @@ sub our_tzil {
             @additional
         ],
         core_args   => { version => undef },
-        plugin_list => [ qw(GatherDir Git::NextVersion Git::CheckFor::Fixups FakeRelease) ],
+        plugin_list => [ qw(%Store::Git GatherDir Git::NextVersion Git::CheckFor::Fixups FakeRelease) ],
     );
 }
 
