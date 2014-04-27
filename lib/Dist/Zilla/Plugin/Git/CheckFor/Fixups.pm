@@ -48,8 +48,8 @@ sub gitstore_config_provided {
 
     # FIXME version.regexp, version.first?
     return {
-        version_regexp => $self->_next_version_plugin->version_regexp,
-        first_version => $self->_next_version_plugin->first_version,
+        'version.regexp' => $self->_next_version_plugin->version_regexp,
+        'version.first'  => $self->_next_version_plugin->first_version,
     };
 }
 
@@ -57,14 +57,15 @@ sub gitstore_config_required {
     my $self = shift @_;
 
     # FIXME flatten? version.regexp, version.first?
-    return [ qw{ version_regexp first_version } ];
+    return [ qw{ version.first version.regexp } ];
 }
 
 sub before_release {
     my $self = shift @_;
 
-    my $repo     = $self->_repo;
-    my $last_ver = $self->last_version;
+    my $gitstore = $self->_git_store;
+    my $repo     = $gitstore->_repo;  # FIXME move this into gitstore
+    my $last_ver = $gitstore->last_version;
 
     ### $last_ver
 
@@ -80,12 +81,12 @@ sub before_release {
         # But for now, this allows tags generated with a '-TRIAL' appended to
         # them to be found and used without too much fuss.
 
-        try   { @logs = $self->_repo->log($log_opts, "$last_ver..HEAD") }
-        catch { @logs = $self->_repo->log($log_opts, "$last_ver-TRIAL..HEAD") }
+        try   { @logs = $repo->log($log_opts, "$last_ver..HEAD") }
+        catch { @logs = $repo->log($log_opts, "$last_ver-TRIAL..HEAD") }
         ;
     }
     else {
-        @logs = $self->_repo->log($log_opts);
+        @logs = $repo->log($log_opts);
     }
 
     my $_checker = sub {
