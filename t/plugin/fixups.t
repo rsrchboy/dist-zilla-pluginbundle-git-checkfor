@@ -18,7 +18,7 @@ use Dist::Zilla::Plugin::Git::CheckFor::Fixups;
 
 validate_class 'Dist::Zilla::Plugin::Git::CheckFor::Fixups' => (
     does => [
-        'Dist::Zilla::Role::GitStash::ConfigConsumer',
+        'Dist::Zilla::Role::GitStore::ConfigConsumer',
         'Dist::Zilla::Role::BeforeRelease',
     ],
 );
