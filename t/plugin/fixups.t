@@ -4,13 +4,11 @@ use warnings;
 use autodie 'system';
 use IPC::System::Simple (); # for autodie && prereqs
 
-use File::chdir;
-use Path::Class;
+use Path::Tiny;
 
 use Test::More;
 use Test::Fatal;
 use Test::Moose::More 0.004;
-use Test::TempDir;
 
 require 't/funcs.pm' unless eval { require funcs };
 
@@ -53,7 +51,7 @@ sub our_tzil {
     #my ($tzil, $repo_root) = prep_for_testing(
     return prep_for_testing(
         repo_init => [
-            sub { dir(qw{ lib DZT })->mkpath },
+            sub { path(qw{ lib DZT })->mkpath },
             _ack('lib/DZT/Sample.pm' => 'package DZT::Sample; use Something; 1;'),
             @additional
         ],

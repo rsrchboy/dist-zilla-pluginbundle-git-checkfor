@@ -4,7 +4,7 @@ use warnings;
 use Test::More;
 use Test::Fatal;
 use Test::Moose::More 0.004;
-use Test::TempDir;
+use Path::Tiny;
 
 require 't/funcs.pm' unless eval { require funcs };
 
@@ -67,7 +67,7 @@ sub our_test {
 
     my ($tzil, $repo_root) = prep_for_testing(
         repo_init => [
-            sub { dir(qw{ lib DZT })->mkpath },
+            sub { path(qw{ lib DZT })->mkpath },
             _ack('lib/DZT/Sample.pm' => 'package DZT::Sample; use Something; 1;'),
             _ack(foo => 'bap'),
             _ack(bap => 'bink'),
