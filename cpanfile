@@ -23,14 +23,14 @@ on 'test' => sub {
   requires "File::chdir" => "0";
   requires "IO::Handle" => "0";
   requires "IPC::Open3" => "0";
-  requires "Path::Class" => "0";
   requires "Test::CheckDeps" => "0.010";
   requires "Test::DZil" => "0";
   requires "Test::Fatal" => "0";
   requires "Test::Moose::More" => "0.008";
   requires "Test::More" => "0.94";
-  requires "Test::TempDir" => "0";
   requires "perl" => "5.006";
+  requires "Path::Tiny" => "0";
+  requires "Test::TempDir::Tiny" => "0";
 };
 
 on 'configure' => sub {

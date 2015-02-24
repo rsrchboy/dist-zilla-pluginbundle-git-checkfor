@@ -5,9 +5,10 @@ use autodie 'system';
 use IPC::System::Simple (); # for autodie && prereqs
 
 use File::chdir;
-use Path::Class;
 use Capture::Tiny 'capture_merged';
 use Try::Tiny;
+use Path::Tiny;
+use Test::TempDir::Tiny;
 
 use Test::DZil;
 
@@ -18,7 +19,7 @@ sub make_test_repo {
     my @commands = @_;
 
     my $tempdir = tempdir;
-    my $repo_root = dir($tempdir)->absolute;
+    my $repo_root = path($tempdir)->absolute;
     note "Repo being created at $repo_root";
     local $CWD = "$repo_root";
 
