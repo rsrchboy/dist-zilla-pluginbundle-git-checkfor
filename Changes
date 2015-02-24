@@ -2,6 +2,9 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
 
+0.012     2015-02-23 20:47:40 PST-0800
+	* Switch tests to Test::TempDir::Tiny (thanks ether! closed #19)
+
 0.011     2014-04-11 12:57:35 PDT-0700
 	* Set GIT_AUTHOR_EMAIL, etc, in our tests to prevent git identity crises;
 	  closes #13

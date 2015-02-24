@@ -4,7 +4,7 @@ Dist::Zilla::PluginBundle::Git::CheckFor - All Git::CheckFor plugins at once
 
 # VERSION
 
-This document describes version 0.011 of Dist::Zilla::PluginBundle::Git::CheckFor - released April 11, 2014 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
+This document describes version 0.012 of Dist::Zilla::PluginBundle::Git::CheckFor - released February 23, 2015 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 # SYNOPSIS
 
@@ -28,8 +28,8 @@ Please see those modules/websites for more information related to this module.
 
 # SOURCE
 
-The development version is on github at [http://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor](http://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor)
-and may be cloned from [git://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git](git://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git)
+The development version is on github at [http://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor](http://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor)
+and may be cloned from [git://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git](git://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git)
 
 # BUGS
 
@@ -43,6 +43,23 @@ feature.
 # AUTHOR
 
 Chris Weyl <cweyl@alumni.drew.edu>
+
+## I'm a material boy in a material world
+
+<div>
+    <a href="https://www.gittip.com/RsrchBoy/"><img src="https://raw.githubusercontent.com/gittip/www.gittip.com/master/www/assets/%25version/logo.png" /></a>
+    <a href="http://bit.ly/rsrchboys-wishlist"><img src="http://wps.io/wp-content/uploads/2014/05/amazon_wishlist.resized.png" /></a>
+    <a href="https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fdist-zilla-pluginbundle-git-checkfor&title=RsrchBoy's%20CPAN%20Dist-Zilla-PluginBundle-Git-CheckFor&tags=%22RsrchBoy's%20Dist-Zilla-PluginBundle-Git-CheckFor%20in%20the%20CPAN%22"><img src="http://api.flattr.com/button/flattr-badge-large.png" /></a>
+</div>
+
+Please note **I do not expect to be gittip'ed or flattr'ed for this work**,
+rather **it is simply a very pleasant surprise**. I largely create and release
+works like this because I need them or I find it enjoyable; however, don't let
+that stop you if you feel like it ;)
+
+[Flattr this](https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fdist-zilla-pluginbundle-git-checkfor&title=RsrchBoy&#x27;s%20CPAN%20Dist-Zilla-PluginBundle-Git-CheckFor&tags=%22RsrchBoy&#x27;s%20Dist-Zilla-PluginBundle-Git-CheckFor%20in%20the%20CPAN%22),
+[gittip me](https://www.gittip.com/RsrchBoy/), or indulge my
+[Amazon Wishlist](http://bit.ly/rsrchboys-wishlist)...  If you so desire.
 
 # CONTRIBUTORS
 

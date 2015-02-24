@@ -23,24 +23,26 @@ on 'test' => sub {
   requires "File::chdir" => "0";
   requires "IO::Handle" => "0";
   requires "IPC::Open3" => "0";
+  requires "Path::Tiny" => "0";
   requires "Test::CheckDeps" => "0.010";
   requires "Test::DZil" => "0";
   requires "Test::Fatal" => "0";
   requires "Test::Moose::More" => "0.008";
   requires "Test::More" => "0.94";
-  requires "perl" => "5.006";
-  requires "Path::Tiny" => "0";
   requires "Test::TempDir::Tiny" => "0";
+  requires "perl" => "5.006";
 };
 
 on 'configure' => sub {
   requires "Devel::CheckBin" => "0";
-  requires "ExtUtils::MakeMaker" => "6.30";
+  requires "ExtUtils::MakeMaker" => "0";
+  requires "perl" => "5.006";
 };
 
 on 'develop' => sub {
   requires "Pod::Coverage::TrustPod" => "0";
-  requires "Test::More" => "0";
+  requires "Test::EOL" => "0";
+  requires "Test::More" => "0.88";
   requires "Test::NoTabs" => "0";
   requires "Test::Pod" => "1.41";
   requires "Test::Pod::Coverage" => "1.08";
