@@ -4,7 +4,6 @@ use warnings;
 
 # ABSTRACT: Check your repo for merge-conflicted files
 use Moose;
-use Moose::Autobox;
 use autodie qw(:io);
 use namespace::autoclean;
 use List::MoreUtils qw(any);
@@ -46,7 +45,7 @@ sub before_release {
 
     my %error_files;
     FILE:
-    foreach my $file ( $self->zilla->files->flatten ) {
+    foreach my $file ( @{ $self->zilla->files } ) {
         next FILE
             if $file->can('encoding') and $file->encoding eq 'bytes';
 
