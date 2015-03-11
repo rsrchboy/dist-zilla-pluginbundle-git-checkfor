@@ -1,7 +1,5 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
-{{$NEXT}}
-
 0.013     2015-03-10 19:33:10 PDT-0700
 	* Drop autobox usage (thanks, @ether!)
 
