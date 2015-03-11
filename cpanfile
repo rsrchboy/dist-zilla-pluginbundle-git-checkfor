@@ -7,7 +7,6 @@ requires "IPC::System::Simple" => "0";
 requires "List::MoreUtils" => "0";
 requires "List::Util" => "0";
 requires "Moose" => "0";
-requires "Moose::Autobox" => "0";
 requires "Moose::Role" => "0";
 requires "MooseX::AttributeShortcuts" => "0";
 requires "Try::Tiny" => "0";

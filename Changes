@@ -2,6 +2,9 @@ Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
 
+0.013     2015-03-10 19:33:10 PDT-0700
+	* Drop autobox usage (thanks, @ether!)
+
 0.012     2015-02-23 20:47:40 PST-0800
 	* Switch tests to Test::TempDir::Tiny (thanks ether! closed #19)
 
