@@ -1,38 +1,31 @@
+sudo: false
+addons:
+  apt:
+    packages:
+      - aspell
+      - aspell-en
 language: perl
 perl:
-   -  "5.8"
-   - "5.10"
-   - "5.12"
-   - "5.14"
-   - "5.16"
-   - "5.18"
-
+  - "5.14"
+  - "5.16"
+  - "5.18"
+  - "5.20"
+  - "5.22"
+  - "5.24"
+  - "dev"
+env:
+  global:
+    - COVERAGE=1
+cache:
+  directories:
+    - $HOME/perl5/perlbrew/perls/$TRAVIS_PERL_VERSION/bin/
+    - $HOME/perl5/perlbrew/perls/$TRAVIS_PERL_VERSION/lib/site_perl/
+before_cache:
+    - perlbrew list
+    - set | grep -a 'PERL.*='
 matrix:
-   allow_failures:
-      - perl: "5.8"
-
+  allow_failures:
+    - perl: dev
 before_install:
-   # gotta love failing pod tests blowing everything up...
-   - cpanm -q TAP::Harness::Restricted || { cat ~/.cpanm/build.log ; false ; }
-   - export HARNESS_SUBCLASS=TAP::Harness::Restricted
-
-   # avoid dzil iff our perl < v5.10
-   - perl -e '$^V lt v5.10' && ( cpanm --installdeps . ; exit 0 ; )
-
-   # Deal with all of the DZIL dependancies, quickly and quietly
-   # Moose installs in parallel quite nicely.
-   - cpanm --force --verbose --skip-satisfied Directory::Scratch
-   - HARNESS_OPTIONS=j8:c cpanm -q Moose       || { cat ~/.cpanm/build.log ; false ; }
-   - HARNESS_OPTIONS=j8:c cpanm -q Dist::Zilla || { cat ~/.cpanm/build.log ; false ; }
-
-   - dzil authordeps --missing | xargs cpanm -q || { cat ~/.cpanm/build.log ; false ; }
-   # for DZP LinkCheck
-   - cpanp x
-
-install:
-   # a NO-OP, essentially
-   - true
-
-script:
-   - export DZSIGN=archive
-   - if `perl -e '$^V lt v5.10'` ; then prove -lr t/ ; else dzil test --all ; fi
+  - cpanp x
+  - eval $(curl https://travis-perl.github.io/init) --auto
