@@ -1,10 +1,14 @@
+[![Build Status](https://travis-ci.org/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.svg?branch=master)](https://travis-ci.org/RsrchBoy/dist-zilla-pluginbundle-git-checkfor)
+[![Kwalitee status](http://cpants.cpanauthors.org/dist/Dist-Zilla-PluginBundle-Git-CheckFor.png)](http://cpants.charsbar.org/dist/overview/Dist-Zilla-PluginBundle-Git-CheckFor)
+[![Coverage Status](https://coveralls.io/repos/RsrchBoy/dist-zilla-pluginbundle-git-checkfor/badge.svg?branch=master)](https://coveralls.io/r/RsrchBoy/dist-zilla-pluginbundle-git-checkfor?branch=master)
+
 # NAME
 
 Dist::Zilla::PluginBundle::Git::CheckFor - All Git::CheckFor plugins at once
 
 # VERSION
 
-This document describes version 0.013 of Dist::Zilla::PluginBundle::Git::CheckFor - released March 10, 2015 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
+This document describes version 0.014 of Dist::Zilla::PluginBundle::Git::CheckFor - released October 09, 2016 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 # SYNOPSIS
 
@@ -26,15 +30,10 @@ Please see those modules/websites for more information related to this module.
 - [Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts](https://metacpan.org/pod/Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts)
 - [Dist::Zilla::PluginBundle::Git](https://metacpan.org/pod/Dist::Zilla::PluginBundle::Git)
 
-# SOURCE
-
-The development version is on github at [http://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor](http://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor)
-and may be cloned from [git://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git](git://https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor.git)
-
 # BUGS
 
 Please report any bugs or feature requests on the bugtracker website
-https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor/issues
+[https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor/issues](https://github.com/RsrchBoy/dist-zilla-pluginbundle-git-checkfor/issues)
 
 When submitting a bug or request, please include a test-file or a
 patch to an existing test-file that illustrates the bug or desired
@@ -47,7 +46,7 @@ Chris Weyl <cweyl@alumni.drew.edu>
 ## I'm a material boy in a material world
 
 <div>
-    <a href="https://www.gittip.com/RsrchBoy/"><img src="https://raw.githubusercontent.com/gittip/www.gittip.com/master/www/assets/%25version/logo.png" /></a>
+    <a href="https://gratipay.com/RsrchBoy/"><img src="http://img.shields.io/gratipay/RsrchBoy.svg" /></a>
     <a href="http://bit.ly/rsrchboys-wishlist"><img src="http://wps.io/wp-content/uploads/2014/05/amazon_wishlist.resized.png" /></a>
     <a href="https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fdist-zilla-pluginbundle-git-checkfor&title=RsrchBoy's%20CPAN%20Dist-Zilla-PluginBundle-Git-CheckFor&tags=%22RsrchBoy's%20Dist-Zilla-PluginBundle-Git-CheckFor%20in%20the%20CPAN%22"><img src="http://api.flattr.com/button/flattr-badge-large.png" /></a>
 </div>
@@ -57,9 +56,9 @@ rather **it is simply a very pleasant surprise**. I largely create and release
 works like this because I need them or I find it enjoyable; however, don't let
 that stop you if you feel like it ;)
 
-[Flattr this](https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fdist-zilla-pluginbundle-git-checkfor&title=RsrchBoy&#x27;s%20CPAN%20Dist-Zilla-PluginBundle-Git-CheckFor&tags=%22RsrchBoy&#x27;s%20Dist-Zilla-PluginBundle-Git-CheckFor%20in%20the%20CPAN%22),
-[gittip me](https://www.gittip.com/RsrchBoy/), or indulge my
-[Amazon Wishlist](http://bit.ly/rsrchboys-wishlist)...  If you so desire.
+[Flattr](https://flattr.com/submit/auto?user_id=RsrchBoy&url=https%3A%2F%2Fgithub.com%2FRsrchBoy%2Fdist-zilla-pluginbundle-git-checkfor&title=RsrchBoy&#x27;s%20CPAN%20Dist-Zilla-PluginBundle-Git-CheckFor&tags=%22RsrchBoy&#x27;s%20Dist-Zilla-PluginBundle-Git-CheckFor%20in%20the%20CPAN%22),
+[Gratipay](https://gratipay.com/RsrchBoy/), or indulge my
+[Amazon Wishlist](http://bit.ly/rsrchboys-wishlist)...  If and \*only\* if you so desire.
 
 # CONTRIBUTORS
 
