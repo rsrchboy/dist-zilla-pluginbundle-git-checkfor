@@ -51,6 +51,15 @@ subtest 'simple repo, on correct branch, multiple release branches' => sub {
     );
 };
 
+subtest 'simple repo, on wrong branch, check_trial is false' => sub {
+    local $ENV{TRIAL} = 1;
+    our_test(
+        [ 'Git::CheckFor::CorrectBranch' => { check_trial => 0 } ],
+        undef,
+        sub { ok !$_[0], 'passed!' },
+    );
+};
+
 # our_test() below is... erm, a little awkward.  But it does the job, and can
 # be refactored when a need/reason arises.
 
