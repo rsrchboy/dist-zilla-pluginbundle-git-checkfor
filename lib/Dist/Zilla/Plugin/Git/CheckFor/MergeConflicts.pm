@@ -1,4 +1,5 @@
 package Dist::Zilla::Plugin::Git::CheckFor::MergeConflicts;
+
 use strict;
 use warnings;
 
