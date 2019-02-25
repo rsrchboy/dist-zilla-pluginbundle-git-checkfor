@@ -1,6 +1,8 @@
 Revision history for Dist-Zilla-PluginBundle-Git-CheckFor
 
 {{$NEXT}}
+    * Add check_trial option to disable checks for trial releases (thanks,
+      Dave Rolsky, PR #25, closes #24)
 
 0.014     2016-10-10 10:27:02 CDT-0500
 	* Drop dependency on List::MoreUtils (thanks, @karenetheridge!)
