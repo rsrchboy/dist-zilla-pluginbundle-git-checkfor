@@ -4,13 +4,12 @@ package Dist::Zilla::Role::Git::Repo::More;
 
 use Moose::Role;
 use namespace::autoclean;
-use MooseX::AttributeShortcuts;
 
 with
     'Dist::Zilla::Role::Git::Repo',
     ;
 
-has _repo => (is => 'lazy', isa => 'Git::Wrapper');
+has _repo => (is => 'ro', lazy => 1, builder => '_build__repo', isa => 'Git::Wrapper');
 sub _build__repo {
   require Git::Wrapper;
   Git::Wrapper->new(shift->repo_root)
@@ -25,7 +24,9 @@ sub _build__repo {
 has _previous_versions => (
 
     traits  => ['Array'],
-    is      => 'lazy',
+    is      => 'ro',
+    lazy    => 1,
+    builder => '_build__previous_versions',
     isa     => 'ArrayRef[Str]',
     handles => {
 
