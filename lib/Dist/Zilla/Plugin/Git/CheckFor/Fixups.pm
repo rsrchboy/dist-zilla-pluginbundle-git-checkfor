@@ -4,7 +4,6 @@ package Dist::Zilla::Plugin::Git::CheckFor::Fixups;
 
 use Moose;
 use namespace::autoclean;
-use MooseX::AttributeShortcuts;
 
 use autodie 'system';
 use IPC::System::Simple ();
@@ -24,7 +23,9 @@ with
     ;
 
 has _next_version_plugin => (
-    is      => 'lazy',
+    is      => 'ro',
+    lazy    => 1,
+    builder => '_build__next_version_plugin',
     isa     => 'Dist::Zilla::Plugin::Git::NextVersion',
     handles => [ qw{ version_regexp first_version } ],
 );
