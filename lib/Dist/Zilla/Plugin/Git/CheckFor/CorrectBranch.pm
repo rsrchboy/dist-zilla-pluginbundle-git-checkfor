@@ -19,6 +19,12 @@ has release_branch => (
     default => sub { [ 'master' ] },
 );
 
+has check_trial => (
+    is => 'ro',
+    isa => 'Bool',
+    default => 1,
+);
+
 sub current_branch {
     my $self = shift @_;
 
@@ -28,6 +34,8 @@ sub current_branch {
 
 sub before_release {
     my $self = shift @_;
+
+    return if $self->zilla->is_trial && !$self->check_trial;
 
     my $cbranch = $self->current_branch;
     my @rbranch = $self->release_branch;
@@ -86,6 +94,11 @@ unrecoverable, but annoying, messy, and (sometimes) embarrassing.
 This is the name of the branch it is legal to release from: it defaults to
 'master'. Multiple branches may be specified; you may want to allow 'master'
 and 'stable'.
+
+=head2 check_trial
+
+If this is set to a false value, then this check will not be done for trial
+releases. This defaults to true.
 
 =head1 SEE ALSO
 
