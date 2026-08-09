@@ -1,5 +1,15 @@
+#
+# This file is part of Dist-Zilla-PluginBundle-Git-CheckFor
+#
+# This software is Copyright (c) 2026 by Chris Weyl.
+#
+# This is free software, licensed under:
+#
+#   The GNU Lesser General Public License, Version 2.1, February 1999
+#
 package Dist::Zilla::Plugin::Git::CheckFor::Fixups;
-
+our $AUTHORITY = 'cpan:RSRCHBOY';
+$Dist::Zilla::Plugin::Git::CheckFor::Fixups::VERSION = '0.015';
 # ABSTRACT: Check your repo for fixup! and squash! before release
 
 use Moose;
@@ -101,7 +111,19 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
-=for Pod::Coverage before_release
+=pod
+
+=encoding UTF-8
+
+=for :stopwords Chris Weyl Christian Doherty Etheridge Karen Mengué Mike Olivier Walde
+
+=head1 NAME
+
+Dist::Zilla::Plugin::Git::CheckFor::Fixups - Check your repo for fixup! and squash! before release
+
+=head1 VERSION
+
+This document describes version 0.015 of Dist::Zilla::Plugin::Git::CheckFor::Fixups - released August 08, 2026 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 =head1 SYNOPSIS
 
@@ -121,6 +143,8 @@ older releases; having a fixup commit in the history is embarrassing, but not
 so much so as rebasing to resolve a blemish in the deep, dark, sordid past of
 the project.
 
+=for Pod::Coverage before_release
+
 =head1 WHAT'S A FIXUP OR SQUASH COMMIT?
 
 A squash or fixup commit is one with a commit message formatted in such a
@@ -132,8 +156,43 @@ A squash commit has a commit message beginning with 'squash! '
 
 =head1 SEE ALSO
 
+Please see those modules/websites for more information related to this module.
+
+=over 4
+
+=item *
+
+L<Dist::Zilla::PluginBundle::Git::CheckFor|Dist::Zilla::PluginBundle::Git::CheckFor>
+
+=item *
+
 L<Dist::Zilla>
+
+=item *
+
 L<Dist::Zilla::Plugin::Git::NextVersion>
 
-=cut
+=back
 
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+L<https://github.com/rsrchboy/dist-zilla-pluginbundle-git-checkfor/issues>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2026 by Chris Weyl.
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
+
+=cut

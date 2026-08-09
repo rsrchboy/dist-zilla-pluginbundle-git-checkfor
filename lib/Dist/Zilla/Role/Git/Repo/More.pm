@@ -1,5 +1,15 @@
+#
+# This file is part of Dist-Zilla-PluginBundle-Git-CheckFor
+#
+# This software is Copyright (c) 2026 by Chris Weyl.
+#
+# This is free software, licensed under:
+#
+#   The GNU Lesser General Public License, Version 2.1, February 1999
+#
 package Dist::Zilla::Role::Git::Repo::More;
-
+our $AUTHORITY = 'cpan:RSRCHBOY';
+$Dist::Zilla::Role::Git::Repo::More::VERSION = '0.015';
 # ABSTRACT: A little more than Dist::Zilla::Role::Git::Repo
 
 use Moose::Role;
@@ -80,6 +90,20 @@ sub _build__previous_versions {
 
 __END__
 
+=pod
+
+=encoding UTF-8
+
+=for :stopwords Chris Weyl Christian Doherty Etheridge Karen Mengué Mike Olivier Walde
+
+=head1 NAME
+
+Dist::Zilla::Role::Git::Repo::More - A little more than Dist::Zilla::Role::Git::Repo
+
+=head1 VERSION
+
+This document describes version 0.015 of Dist::Zilla::Role::Git::Repo::More - released August 08, 2026 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
+
 =head1 SYNOPSIS
 
     # ta-da!
@@ -93,6 +117,39 @@ interested in.
 
 =head1 SEE ALSO
 
+Please see those modules/websites for more information related to this module.
+
+=over 4
+
+=item *
+
+L<Dist::Zilla::PluginBundle::Git::CheckFor|Dist::Zilla::PluginBundle::Git::CheckFor>
+
+=item *
+
 L<Dist::Zilla::Role::Git::Repo>
+
+=back
+
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+L<https://github.com/rsrchboy/dist-zilla-pluginbundle-git-checkfor/issues>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2026 by Chris Weyl.
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
 
 =cut

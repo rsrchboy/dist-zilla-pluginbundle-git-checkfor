@@ -1,5 +1,15 @@
+#
+# This file is part of Dist-Zilla-PluginBundle-Git-CheckFor
+#
+# This software is Copyright (c) 2026 by Chris Weyl.
+#
+# This is free software, licensed under:
+#
+#   The GNU Lesser General Public License, Version 2.1, February 1999
+#
 package Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch;
-
+our $AUTHORITY = 'cpan:RSRCHBOY';
+$Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch::VERSION = '0.015';
 # ABSTRACT: Check that you're on the correct branch before release
 
 use Moose;
@@ -52,7 +62,19 @@ __PACKAGE__->meta->make_immutable;
 
 __END__
 
-=for Pod::Coverage current_branch before_release mvp_multivalue_args
+=pod
+
+=encoding UTF-8
+
+=for :stopwords Chris Weyl Christian Doherty Etheridge Karen Mengué Mike Olivier Walde
+
+=head1 NAME
+
+Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch - Check that you're on the correct branch before release
+
+=head1 VERSION
+
+This document describes version 0.015 of Dist::Zilla::Plugin::Git::CheckFor::CorrectBranch - released August 08, 2026 as part of Dist-Zilla-PluginBundle-Git-CheckFor.
 
 =head1 SYNOPSIS
 
@@ -71,13 +93,14 @@ __END__
     # ...and on branch stable
     $ dzil release # succeeds
 
-
 =head1 DESCRIPTION
 
 This is a simple L<Dist::Zilla> plugin to check that you are on the correct
 branch before allowing a release...  Its reason for existance is to prevent
 accidental releases being cut from topic branches: which are in general not
 unrecoverable, but annoying, messy, and (sometimes) embarrassing.
+
+=for Pod::Coverage current_branch before_release mvp_multivalue_args
 
 =head1 OPTIONS
 
@@ -89,8 +112,43 @@ and 'stable'.
 
 =head1 SEE ALSO
 
+Please see those modules/websites for more information related to this module.
+
+=over 4
+
+=item *
+
+L<Dist::Zilla::PluginBundle::Git::CheckFor|Dist::Zilla::PluginBundle::Git::CheckFor>
+
+=item *
+
 L<Dist::Zilla>
+
+=item *
+
 L<Dist::Zilla::Plugin::Git>
 
-=cut
+=back
 
+=head1 BUGS
+
+Please report any bugs or feature requests on the bugtracker website
+L<https://github.com/rsrchboy/dist-zilla-pluginbundle-git-checkfor/issues>
+
+When submitting a bug or request, please include a test-file or a
+patch to an existing test-file that illustrates the bug or desired
+feature.
+
+=head1 AUTHOR
+
+Chris Weyl <cweyl@alumni.drew.edu>
+
+=head1 COPYRIGHT AND LICENSE
+
+This software is Copyright (c) 2026 by Chris Weyl.
+
+This is free software, licensed under:
+
+  The GNU Lesser General Public License, Version 2.1, February 1999
+
+=cut
